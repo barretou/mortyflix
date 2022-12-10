@@ -7,4 +7,11 @@ async function GetCharacters(page) {
   return resp;
 }
 
-export default GetCharacters;
+async function GetEpisodes(page) {
+  const resp = await fetch(`${baseURL}/episode/?page=${page}`)
+    .then((response) => response.json())
+    .catch((error) => console.log(error));
+  return resp;
+}
+
+export { GetCharacters, GetEpisodes };

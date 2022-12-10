@@ -2,8 +2,8 @@
   <nav class="nav d-flex justify-content-between align-items-center">
     <h1>MortyFLIX</h1>
     <div class="d-flex align-items-center">
-      <router-link class="nav-item" to="/">Personagens</router-link>
-      <router-link class="nav-item" to="/EpisodesView">Episódios</router-link>
+      <router-link class="nav-item" to="/">Characters</router-link>
+      <router-link class="nav-item" to="/EpisodesView">Episodes</router-link>
     </div>
   </nav>
 </template>

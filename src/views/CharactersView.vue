@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div class="row">
-      <h1 class="my-3">Personagens</h1>
+      <h1 class="my-3">Characters</h1>
       <div class="col-12 d-flex justify-content-between flex-wrap">
         <div
           v-for="item in characters.results"
@@ -9,10 +9,10 @@
           class="card m-2"
           style="width: 18rem"
         >
-          <img :src="item.image" class="card-img-top" :alt="item.description" />
+          <img :src="item.image" class="card-img-top" :alt="item.name" />
           <div class="card-body">
             <h5 class="card-title">{{ item.name }}</h5>
-            <p class="card-text">
+            <p class="card-text mb-0">
               <span>Status:</span>
               {{ item.status }}
             </p>
@@ -23,16 +23,28 @@
           </div>
         </div>
       </div>
-      <div class="d-flex justify-content-end">
-        <button class="btn btn-info m-1 d-block" @click="DecrementCurrentPage()">Previous</button>
-        <button class="btn btn-info m-1 d-block" @click="IncrementCurrentPage()">Next</button>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex">
+          <button
+            class="btn btn-info m-1 d-block"
+            @click="DecrementCurrentPage()"
+          >
+            Previous
+          </button>
+          <button
+            class="btn btn-info m-1 d-block"
+            @click="IncrementCurrentPage()"
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import GetCharacters from '@/api/index';
+import { GetCharacters } from '@/api/index';
 
 export default {
   data() {
